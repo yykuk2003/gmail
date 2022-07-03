@@ -1,3 +1,4 @@
+//주어진 ID와 일치하는 DOM 요소를 나타내는 element object
 const menuToggleIcon = document.getElementById('menu-toggle-icon');
 const navMobile = document.getElementById('nav');
 const headerElement = document.getElementById('header');

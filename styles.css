@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;700&display=sawp');
 
-/* custom properties */
+/* custom properties 
+재사용할 임의의 값
+*/
 :root{
     --light-clr:#fff;
     --dark-clr:#504f4f;
@@ -28,7 +30,9 @@
     --gap-lg: 4rem;
 }
 
-/* Base Styles */
+/* Base Styles 
+before some content or after some content
+*/
 *,
 *::before,
 *::after {
@@ -43,11 +47,21 @@ html {
 
 }
 
+/*
+overflow(visible, hidden, scroll, auto)
+overflow: 
+visible: if some contents goes over the box, it shows as it is
+hidden: doesn't show left to right scroll bar, but it show top to bottom scroll bar
+scroll: always show the scroll bar
+auto: when contexts goes over the axix shows the scroll bar
+overflow-x = create scroll bar when right side context is longer than left
+overflow-y = same but top to bottom
+*/
 body {
     font-family: var(--font-family);
     font-size: var(--font-size-sm);
     color: var(--dark clr);
-    overflow-x:hidden;
+    overflow-x: hidden;
 
 }
 
@@ -82,7 +96,15 @@ i {
 }
 
 .sm-screen-hidden {
-    display: none;
+    display: none !important;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.section {
+    padding-block: var(--section-spacing);
 }
 
 /* header */
@@ -95,6 +117,9 @@ i {
     z-index: 999;
 }
 
+/* 
+justify-content: arrnange contents
+*/
 .nav {
     height: 8rem;
     display: flex;
@@ -133,6 +158,11 @@ i {
 
 }
 
+
+/* 
+
+
+*/
 .list-link::after,
 .list-link.current::after {
     content: '';
@@ -157,6 +187,19 @@ i {
     opacity: 1;
 }
 
+
+/* 
+z-index: 
+far from user
+-3
+-2
+-1
+0
+1
+2
+3
+close from user
+*/
 .nav-mobile {
     background-color: #f8f8f8;
     position: absolute;
@@ -182,6 +225,13 @@ i {
     display: block;
 }
 
+
+/* 
+height: 100vh => viewport height 100%
+            => it doens't related to parent value so we can use everywhere
+height: 100% => parent element height 100%
+            => we have to set height to parent value
+*/
 .header::before {
     content: '';
     position: absolute;
@@ -196,6 +246,9 @@ i {
     transition: opacity .5s;
 }
 
+/* 
+transform: rotate, fix size, move around
+*/
 .header.active::before {
     opacity: 1;
     transform: scale(1);
@@ -204,3 +257,101 @@ i {
 .header.active-scroll {
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
+
+
+/* 
+ */
+.showcase {
+    margin-top: 8rem;
+}
+
+.showcase-container {
+    gap: var(--gap-lg);
+}
+
+.image-group {
+    grid-template-columns: 2rem repeat(2, 1fr) 2rem repeat(2, 1fr) 2rem;
+}
+
+.image-box {
+    min-height: 25rem;
+    box-shadow: 2px 2px 1rem rgba(0, 0, 0, .1);
+    /* overflow: hidden; */
+}
+
+.showcase .image-box {
+    min-height: 25rem;
+}
+
+.image-box img {
+    height:100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
+}
+
+.image-left {
+    grid-column: 1/4;
+    grid-row: 1/span 10;
+    z-index: 5;
+}
+
+.image-center {
+    grid-column: 3/6;
+    grid-row: 7/span 10;
+}
+
+.image-right {
+    grid-column: 5/-1;
+    grid-row: 3/span 10;
+    z-index: 5;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: var(--font-size-xsm);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    color: var(--accent-clr);
+    margin-bottom:var(--margin-sm);
+}
+
+.title {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--margin-md);
+}
+
+.main-title {
+    font-size: var(--font-size-lg);
+}
+
+.accent-text {
+    color: var(--accent-clr);
+}
+
+.description {
+    margin-bottom: var(--margin-lg);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-clr);
+    color: var(--light-clr);
+    padding: 1rem 2.5rem;
+    transition: background-color .25s;
+}
+
+.btn:hover {
+    background-color: #00be85;
+}
+
+
+
+
+
+
+
+
