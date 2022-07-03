@@ -293,6 +293,10 @@ transform: rotate, fix size, move around
     transform: scale(1.1);
 }
 
+
+/* 
+set up the position of the images
+*/
 .image-left {
     grid-column: 1/4;
     grid-row: 1/span 10;
@@ -348,10 +352,17 @@ transform: rotate, fix size, move around
     background-color: #00be85;
 }
 
+.secondary-grid {
+    gap: var(--gap-lg);
+}
 
+.beach-data-wrapper {
+    position: relative;
+}
 
-
-
-
-
-
+.beach-data-wrapper.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
