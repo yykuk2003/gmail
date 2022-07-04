@@ -265,7 +265,9 @@ transform: rotate, fix size, move around
     margin-top: 8rem;
 }
 
-.showcase-container {
+.showcase-container,
+.popular-destinations-container,
+.plan-trip-container {
     gap: var(--gap-lg);
 }
 
@@ -352,7 +354,7 @@ set up the position of the images
     background-color: #00be85;
 }
 
-.secondary-grid {
+.secondary-grid{
     gap: var(--gap-lg);
 }
 
@@ -366,3 +368,95 @@ set up the position of the images
     left: 0;
     width: 100%;
 }
+
+.beach-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.beach-data-inner {
+    width: 100%;
+    background-color: var(--light-clr);
+    padding: 1rem;
+}
+
+.beach-name {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--margin-sm);
+}
+
+.beach-location,
+.beach-location .accent-text {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--font-size-xsm);
+}
+
+.btn.place-items-center {
+    display: inline-flex;
+}
+
+/*Newsletter*/
+.newsletter {
+    background: url('sea2.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 5;
+}
+
+.newsletter:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: -1;
+}
+
+.newsletter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-container-inner {
+    max-width: 78rem;
+    text-align: center;
+    color: var(--light-clr);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap-md);
+}
+
+.btn-light {
+    background-color: var(--light-clr);
+    color: var(--dark-clr);
+}
+
+.btn-light::hover {
+    color: var(--light-clr);
+}
+
+.footer {
+    background-color: var(--light-clr);
+    padding-bottom: 4rem;
+}
+
+.footer-container-inner {
+    grid-template-columns: repeat(auto, minmax(20rem, 1fr));
+
+}
+
+
+
